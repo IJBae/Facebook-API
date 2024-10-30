@@ -34,8 +34,8 @@ use App\Libraries\slack_api\SlackChat;
 
 class ZenithFB
 {
-    private $app_id; //(주)케어랩스 //'318448081868728'; // 열혈패밀리_ver3
-    private $app_secret; //'881a2a6c6edcc9a5291e829278cb91e2';
+    private $app_id;
+    private $app_secret;
     private $access_token;
     private $longLivedAccessToken;
     private $db;
@@ -115,7 +115,7 @@ class ZenithFB
     // 일반 엑세스 토큰을 연장시킴
     public function getLongLivedAccessToken()
     {
-        try { //EAAEhoHjMl7gBAJVuAZCygZCHp11NFWNmf6Hng4KSCDBZCEakZC7yEkZAnAkqvXw9wSAqWX3Qg20r0rzoQORglAp1RMNdqHEeQ4Gy1GZCBlVaDIwvI4BiQzBNavFDRWk49adliwGauowZCc6j3DoMKyDuenoSa0iBVHh9t2hMJ35Pfd8Y1XcHRBy
+        try {
             $oAuth2Client = $this->fb->getOAuth2Client();
             $longLivedAccessToken = $oAuth2Client->getLongLivedAccessToken($this->access_token);
             $this->access_token = $longLivedAccessToken;
